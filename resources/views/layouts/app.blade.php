@@ -37,7 +37,12 @@
                         @else
                             <li class="nav=item">
                                 <a href="{{route('dosen.index')}}" class="nav-link">
-                                    Dosen
+                                    ( Dosen )
+                                </a>
+                            </li>
+                            <li class="nav=item">
+                                <a href="{{route('hobi.index')}}" class="nav-link">
+                                    ( Hobi )
                                 </a>
                             </li>
                         @endguest

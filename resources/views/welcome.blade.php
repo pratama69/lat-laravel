@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Selamat Datang
+                    WILUJENG SUMPING,SEGAWON!
                 </div>
             </div>
         </div>

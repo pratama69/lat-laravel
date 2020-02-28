@@ -10,8 +10,8 @@
                 </div>
                 @endif
                 <div class="card-header">
-                    Data Dosen
-                    <a href="{{route('dosen.create')}}" class="float-right">Tambah Data</a>
+                    Data Wali
+                    <a href="{{route('wali.create')}}" class="float-right btn btn-outline-primary">Tambah Data</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -20,23 +20,23 @@
                                 <tr>
                                     <th>Nomor</th>
                                     <th>Nama</th>
-                                    <th>NIPD</th>
+                                    <th>Nama Anak</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                             @php $no=1; @endphp
-                                @foreach($dosen as $data)
+                                @foreach($wali as $data)
                                 <tr>
                                     <td>{{$no++}}</td>
                                     <td>{{$data->nama}}</td>
-                                    <td>{{$data->nipd}}</td>
+                                    <td>{{$data->mahasiswa->nama}}</td>
                                     <td>
-                                        <form action="{{route('dosen.destroy',$data->id)}}" method="POST">
+                                        <form action="{{route('wali.destroy',$data->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                        <a href="{{route('dosen.show',$data->id)}}" class="btn btn-outline-info">Lihat</a>
-                                        <a href="{{route('dosen.edit',$data->id)}}" class="btn btn-outline-dark">Edit</a>
+                                        <a href="{{route('wali.show',$data->id)}}" class="btn btn-outline-info">Lihat</a>
+                                        <a href="{{route('wali.edit',$data->id)}}" class="btn btn-outline-dark">Edit</a>
                                         <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Anda yakin ingin menghapus data??')">Hapus</button>
                                     </form>
                                     </td>

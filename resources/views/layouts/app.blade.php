@@ -33,19 +33,38 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        @guest
-                        @else
-                            <li class="nav=item">
-                                <a href="{{route('dosen.index')}}" class="nav-link">
-                                    ( Dosen )
-                                </a>
-                            </li>
-                            <li class="nav=item">
-                                <a href="{{route('hobi.index')}}" class="nav-link">
-                                    ( Hobi )
-                                </a>
-                            </li>
-                        @endguest
+                            @guest
+                                @else
+                                    <li class="nav-item">
+                                        <a href="{{route('dosen.index')}}" class="nav-link">
+                                           ( Dosen )
+                                        </a>
+                                    </li>
+                            @endguest
+                            @guest
+                                @else
+                                    <li class="nav-item">
+                                        <a href="{{route('hobi.index')}}" class="nav-link">
+                                            ( Hobi )
+                                        </a>
+                                    </li>
+                            @endguest
+                            @guest
+                                @else
+                                    <li class="nav-item">
+                                        <a href="{{route('mahasiswa.index')}}" class="nav-link">
+                                           ( Mahasiswa )
+                                        </a>
+                                    </li>
+                            @endguest
+                            @guest
+                                @else
+                                    <li class="nav-item">
+                                        <a href="{{route('wali.index')}}" class="nav-link">
+                                            ( Wali )
+                                        </a>
+                                    </li>
+                            @endguest   
                     </ul>
 
                     <!-- Right Side Of Navbar -->

@@ -6,27 +6,25 @@
             <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">
-                    Tambah Data hobi
+                    Update data Wali
                     </div>
                     <div class="card-body">
-                        <form action="{{route('mahasiswa.store')}}" method="post">
+                        <form action="{{route('wali.update',$wali->id)}}" method="post">
                             @csrf
-                            <!-- Nama Mahasiswa -->
+                            @method('PUT')
+                            <!-- Nama Wali -->
                             <div class="form-group">
-                                <label for="">Nama Mahasiswa</label>
-                                <input type="text" name="nama" class="form-control" required>
+                                <label for="">Nama Wali</label>
+                            <input type="text" name="nama" value="{{$wali->nama}}" class="form-control" required>
                             </div>
-                            {{-- Nomor induk Sekolah --}}
-                            <div class="form-group">
-                                <label for="">Nomor induk Sekolah</label>
-                                <input type="text" name="nim" class="form-control" required>
-                            </div>
-                            {{-- Nama Dosen --}}
+                            {{-- Nama Anak --}}
                             <div class="form-group">
                                 <label for="">Nama/Id dosen</label>
-                            <select name="id_dosen" class="form-control">
-                                @foreach ($dosen as $data)
-                            <option value="{{$data->id}}">{{$data->nama}}</option>
+                            <select name="id_mahasiswa" class="form-control">
+                                @foreach ($mhs as $data)
+                            <option value="{{$data->id}}" {{$data->id == $wali->id_mahasiswa ? "selected": ""}}>
+                                {{$data->nama}}
+                            </option>
                                 @endforeach
                             </select>
                             </div>

@@ -11,7 +11,7 @@
 
 <body>
     @foreach($mahasiswa as $data)
-    <h3>{{$data->nama}}<small>[{{$data->nim}}]</small></h3>
+    <h3>{{$data->nama}}</h3>
     <h5>Hobi :
         @foreach($data->hobi as $val)
         <li>
@@ -23,10 +23,13 @@
         <li>
             Nama wali : <strong>{{$data->wali->nama}}</strong>
         </li>
-        <li>Dosen Pembimbing : <strong>{{$data->dosen->nama}}</strong></li>
+        <li>Dosen Pembimbing : <strong>{{$data->dosen->nama}}</strong>
+        </li>
+        <li>NIPD : <strong>{{$data->dosen->nipd}}</strong></li>
     </h4>
     <hr>
     @endforeach
+</body>
 </body>
 
 </html>

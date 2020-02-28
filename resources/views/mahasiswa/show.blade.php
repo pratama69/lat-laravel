@@ -9,30 +9,26 @@
                     Tambah Data hobi
                     </div>
                     <div class="card-body">
-                        <form action="{{route('mahasiswa.store')}}" method="post">
+                        <form action="{{url()->previous()}}" method="post">
                             @csrf
                             <!-- Nama Mahasiswa -->
                             <div class="form-group">
                                 <label for="">Nama Mahasiswa</label>
-                                <input type="text" name="nama" class="form-control" required>
+                            <input type="text" name="nama" value="{{$mhs->nama}}" class="form-control" required readonly>
                             </div>
                             {{-- Nomor induk Sekolah --}}
                             <div class="form-group">
                                 <label for="">Nomor induk Sekolah</label>
-                                <input type="text" name="nim" class="form-control" required>
+                            <input type="text" name="nim" value="{{$mhs->nim}}" class="form-control" required readonly>
                             </div>
                             {{-- Nama Dosen --}}
                             <div class="form-group">
                                 <label for="">Nama/Id dosen</label>
-                            <select name="id_dosen" class="form-control">
-                                @foreach ($dosen as $data)
-                            <option value="{{$data->id}}">{{$data->nama}}</option>
-                                @endforeach
-                            </select>
+                            <input type="text" name="id_dosen" value="{{$mhs->dosen->nama}}" class="form-control" readonly>
                             </div>
                             <!-- Submit -->
                             <div class="form-group">
-                                <button type="submit" class="btn btn-outline-primary">Simpan</button>
+                            <a href="{{url()->previous()}}" class="btn btn-outline-info">Kembali</a>
                             </div>
                         </form>
                     </div>
